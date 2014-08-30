@@ -5,11 +5,11 @@
   "description": "This extension blocks clickbait",
   "version": "0.0.2",
 
-  "content_scripts": [
-    {
+  "permissions": ["storage"],
+
+  "content_scripts": [{
       "matches": ["http://*/*", "https://*/*"],
       "js": ["contentScript.js"]
-    }
-  ]
+  }]
 }
 
