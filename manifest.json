@@ -3,9 +3,11 @@
 
   "name": "BlockWorthy",
   "description": "This extension blocks clickbait",
-  "version": "0.0.2",
+  "version": "0.0.3",
 
   "permissions": ["storage"],
+
+  "options_page": "options.html",
 
   "content_scripts": [{
       "matches": ["http://*/*", "https://*/*"],

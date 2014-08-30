@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.3 - 2014-08-30
+
+### Added
+- Added options page to adjust list of blockworthy domains
+
 ## 0.0.2 - 2014-08-29
 
 ### Added

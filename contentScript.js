@@ -1,8 +1,3 @@
-var default_blockworthy_domains = [
-  "buzzfeed.com",
-  "viralnova.com",
-  "upworthy.com"
-];
 
 function domain_is_blockworthy(blockworthy_domains, domain) {
   for(var i = 0; i < blockworthy_domains.length; i++) {
@@ -20,14 +15,16 @@ function scrub(link) {
 }
 
 chrome.storage.local.get({
-  'blockworthy_domains': default_blockworthy_domains
+  'blockworthy_domains': ''
 }, function(options) {
   var links = document.links;
   var size = links.length
 
+  var blockworthy_domains = JSON.parse(options.blockworthy_domains);
+
   for(var i = 0; i < size; i++) {
     var link = links[i];
-    if (domain_is_blockworthy(options.blockworthy_domains, link.hostname)) {
+    if (domain_is_blockworthy(blockworthy_domains, link.hostname)) {
       scrub(link);
     }
   }
