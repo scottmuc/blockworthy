@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.0.4 - 2014-09-13
+
+### Added
+- Visiting a blockworthy domain scrubs the content of the website
+
 ## 0.0.3 - 2014-08-30
 
 ### Added

@@ -17,10 +17,18 @@ function scrub(link) {
 chrome.storage.local.get({
   'blockworthy_domains': ''
 }, function(options) {
-  var links = document.links;
-  var size = links.length
+
+  var currentLocation = window.location;
 
   var blockworthy_domains = JSON.parse(options.blockworthy_domains);
+
+  if (domain_is_blockworthy(blockworthy_domains, currentLocation.hostname)) {
+    document.body.innerHTML = "<h1>Shouldn't you be doing something productive?</h1>";
+    return;
+  }
+
+  var links = document.links;
+  var size = links.length
 
   for(var i = 0; i < size; i++) {
     var link = links[i];
